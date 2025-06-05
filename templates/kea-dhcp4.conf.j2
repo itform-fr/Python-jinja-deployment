@@ -1,0 +1,36 @@
+{
+    "Dhcp4": {
+        "interfaces-config": {
+            "interfaces": [ "enp0s3" ],
+            "dhcp-socket-type": "raw"
+        },
+        "valid-lifetime": 36000,
+        "renew-timer": 18000,
+        "rebind-timer": 18000,
+        "subnet4": [{
+           "subnet": "{{subnet}}",
+           "pools": [ { "pool": "{{pool}}" } ],
+           "option-data": [
+               {
+                   "name": "domain-name-servers",
+                   "data": "{{dns_servers}}"
+               },
+               {
+                   "name": "domain-name",
+                   "data": "{{dns_name}}"
+               },
+	      { 
+		  "name": "routers",
+                   "data": "{{router}}"
+	      }
+	  ],
+	  "id": 1
+        }],
+
+       "loggers": [{
+            "name": "*",
+            "severity": "DEBUG"
+        }]
+    }
+
+}
