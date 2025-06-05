@@ -1,0 +1,7 @@
+auto lo
+iface lo inet loopback
+
+auto {{iface}}
+iface {{iface}} inet static
+	address {{address}}
+	gateway {{gateway}}
