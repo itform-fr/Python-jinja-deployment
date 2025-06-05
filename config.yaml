@@ -1,0 +1,20 @@
+interfaces:
+  iface:       'enp0s3'
+  address:     '192.168.100.250/24'
+  gateway:     '192.168.100.254'
+
+kea-dhcp4.conf:
+  subnet:      '192.168.100.0/24'
+  pool:        '192.168.100.1 - 192.168.100.50'
+  dns_name:    'masters.lab'
+  dns_servers: '1.1.1.1,1.0.0.1'
+  router:      '192.168.100.254'
+
+named.conf.local:
+  domain:      'masters.lab'
+
+masters.lab.dns:
+  host:        'srv-1'
+  domain:      'masters.lab'
+  ip:          '192.168.100.250'
+  alias:       'www'
